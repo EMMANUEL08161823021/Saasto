@@ -1,0 +1,119 @@
+"use client"
+import React, { useState } from "react";
+
+const Client = () => {
+  const testimonials = [
+    {
+      text:
+        "Leading an organization is incredibly rewarding and equally humbling. Confidence and humility. Every success is built on lessons from mistakes made is incredibly rewarding",
+      name: "Mila McSabbu",
+      role: "Designer",
+    },
+    {
+      text:
+        "We saw a measurable increase in productivity and team alignment after switching. The UI is simple and the onboarding was seamless.",
+      name: "Ayo Ade",
+      role: "Product Manager",
+    },
+    {
+      text:
+        "The tracking features saved us countless hours. The analytics made planning and forecasting so much easier.",
+      name: "Sara Bello",
+      role: "Founder",
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+  const total = testimonials.length;
+
+  function prev() {
+    setIndex((i) => (i - 1 + total) % total);
+  }
+  function next() {
+    setIndex((i) => (i + 1) % total);
+  }
+  function goTo(i) {
+    setIndex(i);
+  }
+
+  return (
+    <section className="relative bg-[#FFFFFF] overflow-hidden">
+      <br/>
+      <br/>
+      {/* decorative images left unchanged */}
+      <img className="absolute hidden md:block h-1/5 left-[5%] top-[5%]" src={"/assets/like.svg"} alt="alt" />
+      <img className="absolute hidden md:block h-1/5 left-[14%] bottom-[10%]" src={"/assets/chat.svg"} alt="alt" />
+
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="flex flex-col gap-3 justify-center">
+          <div className="flex flex-col gap-2">
+            <h1 className="font-bold text-3xl">What our client says</h1>
+            <p className="text-sm text-gray-600">Growth your business with using us</p>
+          </div>
+
+          {/* BIGGER, CENTERED card-paginate */}
+          <div
+            className="card-pagainate card-paginate mx-auto mt-6 flex flex-col md:flex-row items-center md:items-stretch gap-8 text-left justify-center
+                       max-w-3xl w-full px-4"
+          >
+            {/* left: larger image box — kept the <img> tag inside exactly as you had it */}
+            <div className="rounded-4xl p-3 max-w-2xl flex-shrink-0 z-20 flex items-center justify-center overflow-hidden shadow-lg bg-[#FFF8F2]">
+              <img src={"/assets/chess.svg"} alt="image" />
+            </div>
+
+            {/* right: enlarged testimonial content */}
+            <div className="flex-1 max-w-xl">
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed" aria-live="polite">
+                {testimonials[index].text}
+              </p>
+
+              <div className="mt-4">
+                <h3 className="font-semibold text-lg text-gray-900">{testimonials[index].name}</h3>
+                <h4 className="text-sm text-gray-500">{testimonials[index].role}</h4>
+              </div>
+
+              {/* centered pagination controls */}
+              <div className="mt-6 flex items-center gap-4 justify-start">
+                <button
+                  onClick={prev}
+                  aria-label="Previous testimonial"
+                  className="px-4 py-2 rounded-md border bg-white hover:bg-gray-50 transition text-sm"
+                >
+                  Prev
+                </button>
+
+                <div className="flex gap-3 items-center">
+                  {testimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => goTo(i)}
+                      aria-label={`Show testimonial ${i + 1}`}
+                      className={`w-4 h-4 rounded-full transition-transform ${i === index ? "scale-110 bg-[#FF553E]" : "bg-gray-300"}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={next}
+                  aria-label="Next testimonial"
+                  className="px-4 py-2 rounded-md border bg-white hover:bg-gray-50 transition text-sm"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* end card-paginate */}
+        </div>
+      </div>
+
+      {/* decorative right-bottom image left unchanged */}
+      <img className="absolute hidden md:block h-1/5 right-[10%] bottom-[7%]" src={"/assets/emoji.svg"} alt="alt" />
+
+      <br/>
+      <br/>
+    </section>
+  );
+};
+
+export default Client;
