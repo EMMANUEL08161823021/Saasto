@@ -12,7 +12,7 @@ const Tracker = () => {
 
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>How our Tracker work for you</h1>
-        <p className="mt-3 text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
+        <p className="mt-3 text-xs text-gray-600 max-w-3xl mx-auto">
           An enim nullam tempor sapien gravida donec enim ipsum porta justo congue
           magna at pretium purus pretium ligula
         </p>
@@ -21,35 +21,36 @@ const Tracker = () => {
           {/* Left: Features list */}
           <div className="content text-left flex flex-col gap-6">
             <div className="flex gap-4 items-start">
-              <div className="p-3 w-12 h-12 rounded-lg bg-white border shadow-sm flex items-center justify-center">
+              <div className="p-3 w-12 h-12 rounded-lg bg-[#5BC17F] border-[#5BC17F] shadow-sm flex items-center justify-center">
                 <img src={"/assets/minute.svg"} alt="wallet"/>
               </div>
               <div>
                 <h4 className="font-semibold text-lg">Time Tracking</h4>
-                <p className="text-sm text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
+                <p className="text-xs text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
               </div>
             </div>
 
             <div className="flex gap-4 items-start">
-              <div className="p-3 w-12 h-12 rounded-lg bg-white border shadow-sm flex items-center justify-center">
+              <div className="p-3 w-12 h-12 rounded-lg bg-transparent shadow-sm flex items-center justify-center">
                 <img src={"/assets/hourglass.svg"} alt="wallet"/>
               </div>
-              <div className="p-3 w-12 h-12 rounded-lg bg-white border shadow-sm flex items-center justify-center">
+              <div className="p-3 w-12 h-12 rounded-lg bg-[#FE6292] border-[#FE6292] shadow-sm flex items-center justify-center">
                 <img src={"/assets/hourglass.svg"} alt="wallet"/>
               </div>
+
               <div>
                 <h4 className="font-semibold text-lg">Expenses</h4>
-                <p className="text-sm text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
+                <p className="text-xs text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
               </div>
             </div>
 
             <div className="flex gap-4 items-start">
-              <div className="p-3 w-12 h-12 rounded-lg bg-white border shadow-sm flex items-center justify-center">
+              <div className="p-3 w-12 h-12 rounded-lg bg-[#6B72FF] border-[#6B72FF] shadow-sm flex items-center justify-center">
                 <img src={"/assets/wallet.svg"} alt="wallet"/>
               </div>
               <div>
                 <h4 className="font-semibold text-lg">Budget controlling</h4>
-                <p className="text-sm text-gray-600">Easily set budgets and monitor spending against targets</p>
+                <p className="text-xs text-gray-600">Easily set budgets and monitor spending against targets</p>
               </div>
             </div>
           </div>

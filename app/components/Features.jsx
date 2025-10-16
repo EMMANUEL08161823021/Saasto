@@ -19,7 +19,7 @@ const Features = () => {
           >
               Some Excellent Features For You          
           </motion.h2>
-        <p className="mt-3 text-gray-600 text-sm">
+        <p className="mt-3 text-gray-600 text-xs">
           An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden sm:block"/>justo
           congue magna at pretium purus pretium ligula
         </p>

@@ -41,7 +41,7 @@ const Flexible = () => {
                 </div>
 
                 <div className="mt-6">
-                    <button className="w-full px-6 py-3 rounded-full text-sm bg-[#FF553E] text-white shadow hover:brightness-95 transition">
+                    <button className="w-full px-6 py-3 rounded-full text-xs bg-[#FF553E] text-white shadow hover:brightness-95 transition">
                     Start 14 Days Trial
                     </button>
                 </div>
@@ -58,7 +58,7 @@ const Flexible = () => {
                 </div>
 
                 <div className="mt-6">
-                    <button className="w-full px-6 py-3 text-sm rounded-full bg-white/10 text-white shadow hover:opacity-90 transition">
+                    <button className="w-full px-6 py-3 text-xs rounded-full bg-white text-[#FF553E] shadow hover:opacity-90 transition">
                     Start 14 Days Trial
                     </button>
                 </div>

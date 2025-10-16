@@ -39,7 +39,7 @@ export default function Navbar() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-4">
-              <ul className="flex gap-3">
+              <ul className="flex gap-4 text-xs">
                 <a href="#"><li className="hover:text-blue-600">Demos</li></a>
                 <a href="#"><li className="hover:text-blue-600">Features</li></a>
                 <a href="#"><li className="hover:text-blue-600">Pricing</li></a>
@@ -50,8 +50,8 @@ export default function Navbar() {
             {/* Actions + Mobile Hamburger */}
             <div className="flex items-center gap-3">
               <div className="hidden sm:flex gap-3">
-                <button className="px-3 py-1 rounded-md text-[#FF553E]">Login</button>
-                <button className="px-3 py-2 rounded-lg bg-[#FF553E] text-white">Sign up</button>
+                <button className="px-3 py-1 text-xs rounded-md text-[#FF553E]">Login</button>
+                <button className="px-3 py-2 text-xs rounded-lg bg-[#FF553E] text-white">Sign up</button>
               </div>
 
               {/* Hamburger for mobile */}

@@ -2,6 +2,8 @@
 import './globals.css'
 import { Poppins } from 'next/font/google'
 
+import LoaderManager from './components/LoaderManager';
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300','400','500','600','700'], // only include the weights you need
@@ -18,17 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className /* or poppins.variable */}>
-      <body>{children}</body>
+      <body>
+
+      <LoaderManager>{children}</LoaderManager>
+      </body>
     </html>
   )
 }
-
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en" className={poppins.variable}>
-//       <body className="font-sans">{children}</body>
-//     </html>
-//   )
-// }
 

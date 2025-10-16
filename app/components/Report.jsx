@@ -38,8 +38,8 @@ const Report = () => {
                     Analytics & Report <br className="hidden sm:block"/>Breakdown
                 </h1>
 
-                <p className='text-sm text-gray-600 max-w-prose'>
-                    An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden sm:block"/>
+                <p className='text-xs text-gray-600 max-w-prose'>
+                    An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden sm:flex"/>
                     justo congue magna at pretium purus pretium ligula
                 </p>
 
