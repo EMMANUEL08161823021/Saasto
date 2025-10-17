@@ -44,9 +44,9 @@ const Client = () => {
       <img className="absolute hidden md:block h-1/5 left-[5%] top-[5%]" src={"/assets/like.svg"} alt="alt" />
       <img className="absolute hidden md:block h-1/5 left-[14%] bottom-[10%]" src={"/assets/chat.svg"} alt="alt" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <div className="w-full sm:max-w-xl md:max-w-4xl mx-auto px-4 text-left sm:text-center">
         <div className="flex flex-col gap-3 justify-center">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col text-left sm:text-center gap-2">
             <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>What our client says</h1>
             <p className="text-sm text-gray-600">Growth your business with using us</p>
           </div>
@@ -54,10 +54,10 @@ const Client = () => {
           {/* BIGGER, CENTERED card-paginate */}
           <div
             className="card-pagainate card-paginate mx-auto mt-6 flex flex-col md:flex-row items-center md:items-stretch gap-8 text-left justify-center
-                       max-w-3xl w-full px-4"
+                       max-w-3xl w-full"
           >
             {/* left: larger image box — kept the <img> tag inside exactly as you had it */}
-            <div className="max-w-sm flex-shrink-0 z-20 flex items-center justify-center rounded-4xl overflow-hidden shadow-lg bg-[#FFF8F2]">
+            <div className="w-full md:max-w-sm flex-shrink-0 z-20 flex items-center justify-center rounded-4xl overflow-hidden shadow-lg bg-[#FFF8F2]">
               <img height={100} src={"/assets/person.jpg"} alt="image" />
             </div>
 
@@ -88,7 +88,7 @@ const Client = () => {
                       key={i}
                       onClick={() => goTo(i)}
                       aria-label={`Show testimonial ${i + 1}`}
-                      className={`w-4 h-4 rounded-full transition-transform ${i === index ? "scale-110 bg-[#FF553E]" : "bg-gray-300"}`}
+                      className={`w-2 h-2 rounded-full transition-transform ${i === index ? "scale-110 bg-[#FF553E]" : "bg-gray-300"}`}
                     />
                   ))}
                 </div>

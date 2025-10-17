@@ -104,7 +104,7 @@ const Hero = () => {
 
         {/* Center Content */}
         <div className="flex justify-center items-center w-full h-full">
-          <div className="relative max-w-4xl mx-auto text-left sm:text-center px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-4xl mx-auto text-left sm:text-center ">
             <img className='absolute left-[-20%] w-1/5 top-[-60%]' src={"/assets/alarm-vector.svg"} alt='Alarm Clock' />
             <motion.img
               className="absolute hidden md:block left-[-5%] w-1/5 top-[-50%] pointer-events-none"

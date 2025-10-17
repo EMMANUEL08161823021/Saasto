@@ -8,7 +8,7 @@ const Report = () => {
         <section className="features bg-[#FFFFFF] ">
         <br/>
         <br/>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="w-full sm:max-w-xl md:max-w-4xl mx-auto px-4 text-center">
             {/* Feature Grid */}
             <div className="flex flex-col md:flex-row justify-center items-center">
                 <div className='flex items-center justify-center'>
@@ -35,11 +35,11 @@ const Report = () => {
                 {/* Card 2 */}
                 <div className='report flex flex-col text-left gap-4'>
                 <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>
-                    Analytics & Report <br className="hidden sm:block"/>Breakdown
+                    Analytics & Report <br className="hidden md:block"/>Breakdown
                 </h1>
 
                 <p className='text-xs text-gray-600 max-w-prose'>
-                    An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden sm:flex"/>
+                    An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden md:flex"/>
                     justo congue magna at pretium purus pretium ligula
                 </p>
 

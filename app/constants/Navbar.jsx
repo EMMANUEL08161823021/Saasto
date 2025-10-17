@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
       <header className="w-[100%] flex justify-center h-16">
-        <div className="w-[100%] sm:w-[75%] fixed bg-[#FFF8F2] top-0 mx-auto z-50 px-4">
+        <div className="w-[100%] sm:max-w-xl md:max-w-4xl fixed bg-[#FFF8F2] top-0 mx-auto z-50 px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo + Brand */}
             <div className="flex items-center gap-4">

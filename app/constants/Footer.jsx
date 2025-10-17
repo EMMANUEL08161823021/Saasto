@@ -29,20 +29,25 @@ const Footer = () => {
 
           <div className="social-media flex flex-wrap items-center gap-3 text-sm">
             <div className="flex items-center gap-2">
-              <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon>
+              {/* <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon> */}
+              <a href="#" className="hover:text-blue-600"><li className='list-none'>Contact</li></a>
               <h3 className="truncate">Linkedin</h3>
             </div>
             <div className="flex items-center gap-2">
-              <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon>
-              <h3 className="truncate">Facebook</h3>
+              {/* <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon> */}
+              <a href="#" className="hover:text-blue-600"><li className='list-none'>Facebook</li></a>
+              {/* <h3 className="truncate"></h3> */}
             </div>
             <div className="flex items-center gap-2">
-              <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon>
-              <h3 className="truncate">Instagram</h3>
+              {/* <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon> */}
+              <a href="#" className="hover:text-blue-600"><li className='list-none'>Instagram</li></a>
+              {/* <h3 className="truncate"></h3> */}
             </div>
             <div className="flex items-center gap-2">
-              <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon>
-              <h3 className="truncate">Twitter</h3>
+              {/* <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon> */}
+              <a href="#" className="hover:text-blue-600"><li className='list-none'>Twitter</li></a>
+
+              {/* <h3 className="truncate">Twitter</h3> */}
             </div>
           </div>
         </div>

@@ -18,13 +18,13 @@ const Flexible = () => {
         <img className="absolute hidden md:block w-1/8 left-[0%] top-[45%]" src={"/assets/Hand.svg"} alt="alt" />
 
 
-      <div className="max-w-5xl h-[100%] mx-auto px-6">
-        <div className="relative text-center px-4 py-8 md:px-8 md:py-12 rounded-lg">
+      <div className="w-full sm:max-w-xl md:max-w-4xl h-[100%] mx-auto px-4">
+        <div className="relative text-center py-8 md:py-12 rounded-lg">
           {/* decorative right image (hidden on small screens) */}
           <img className="absolute w-1/7 hidden md:block right-[12%] top-[24%]" src={"/assets/chess.png"} alt="alt" />
 
           <h1 className="leading-tight text-3xl font-extrabold text-gray-900 mb-2">
-            Flexible work, Simple Price
+            Flexible work, <br className="block sm:hidden"/>Simple Price
           </h1>
 
           <p className="mt-3 text-xs md:text-base text-gray-600">Growth your business with using us</p>
@@ -55,8 +55,8 @@ const Flexible = () => {
           <div className="mt-6 max-w-xl mx-auto flex flex-col md:flex-row gap-6 justify-center items-stretch">
             {/* Free Card */}
             <div
-              className="flex h-[300px] flex-col items-center justify-center p-4 md:p-6 border border-[#FF553E] w-full md:w-1/2"
-              style={{ borderRadius: "60px" }}
+              className="flex h-[300px] flex-col rounded-xl sm:rounded-4xl items-center justify-center p-4 md:p-6 border border-[#FF553E] w-full md:w-1/2"
+            //   style={{ borderRadius: "60px" }}
             >
               <div className="text-center">
                 <div className="flex flex-col gap-2 text-center">
@@ -80,8 +80,8 @@ const Flexible = () => {
 
             {/* Premium Card (prices change based on toggle) */}
             <div
-              className="flex h-[300px] flex-col z-10 items-center justify-center p-4 md:p-6 w-full md:w-1/2 bg-[#FF553E] text-white"
-              style={{ borderRadius: "60px" }}
+              className="flex h-[300px] flex-col rounded-xl sm:rounded-4xl z-10 items-center justify-center p-4 md:p-6 w-full md:w-1/2 bg-[#FF553E] text-white"
+            //   style={{ borderRadius: "60px" }}
             >
               <div className="text-center">
                 <div className="flex flex-col gap-2 text-center">

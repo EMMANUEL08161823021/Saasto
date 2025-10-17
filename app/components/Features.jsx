@@ -8,7 +8,7 @@ const Features = () => {
     <section className="bg-[#FFFFFF] ">
       <br/>
       <br/>
-      <div className="max-w-4xl relative mx-auto px-6 text-center">
+      <div className="w-full sm:max-w-xl md:max-w-4xl relative mx-auto px-4 text-center">
         <img className='absolute h-1/3 hidden lg:block top-[0%] right-[10%]' src={"/assets/rocket.svg"} alt='rocket'/>
         {/* Section Heading */}
           <motion.h2
