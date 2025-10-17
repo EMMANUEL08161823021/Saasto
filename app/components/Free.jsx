@@ -48,7 +48,7 @@ const Free = () => {
 
                     {/* wrap phone image so we can center it on small screens without touching the <img> */}
                     {/* <img className='border' src={"/assets/iphone.svg"} alt='iphone'/> */}
-                    <img className='max-w-xl mx-3 lg:w-1/4' src={"/assets/mobile-screen.svg"} alt='mobile'/>
+                    <img className='max-w-xs md:max-w-xl mx-3 lg:w-1/4' src={"/assets/mobile-screen.svg"} alt='mobile'/>
 
                     {/* <div className="flex justify-center md:justify-end">
                     </div> */}

@@ -49,7 +49,7 @@ const Flexible = () => {
               />
             </button>
 
-            <span className={`text-sm ${isYearly ? "font-semibold" : "text-gray-500"}`}>Yearly</span>
+            <span className={`text-sm ${isYearly ? "font-semibold text-gray-900" : "text-gray-500"}`}>Yearly</span>
           </div>
 
           <div className="mt-6 max-w-xl mx-auto flex flex-col md:flex-row gap-6 justify-center items-stretch">

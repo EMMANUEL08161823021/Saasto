@@ -59,7 +59,7 @@ export default function Navbar() {
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 aria-controls="mobile-menu"
-                className="md:hidden p-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="md:hidden p-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF553E]"
                 onClick={() => setOpen((s) => !s)}
               >
                 {/* simple hamburger icon */}
@@ -108,7 +108,7 @@ export default function Navbar() {
                 </div> */}
                 <button
                   aria-label="Close sidebar"
-                  className="p-2 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="p-2 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF553E]"
                   onClick={() => setOpen(false)}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

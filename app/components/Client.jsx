@@ -57,8 +57,8 @@ const Client = () => {
                        max-w-3xl w-full px-4"
           >
             {/* left: larger image box — kept the <img> tag inside exactly as you had it */}
-            <div className="rounded-4xl p-3 max-w-2xl flex-shrink-0 z-20 flex items-center justify-center overflow-hidden shadow-lg bg-[#FFF8F2]">
-              <img src={"/assets/chess.svg"} alt="image" />
+            <div className="max-w-sm flex-shrink-0 z-20 flex items-center justify-center rounded-4xl overflow-hidden shadow-lg bg-[#FFF8F2]">
+              <img height={100} src={"/assets/person.jpg"} alt="image" />
             </div>
 
             {/* right: enlarged testimonial content */}
