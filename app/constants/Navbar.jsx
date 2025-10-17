@@ -99,7 +99,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-0 z-50 h-full w-70 max-w-[90%] bg-[#FFF8F2] shadow-lg md:hidden"
+              className="fixed top-0 right-0 z-50 h-full w-[60%] max-w-[90%] bg-[#FFF8F2] shadow-lg md:hidden"
             >
               <div className="flex items-center justify-end px-4 py-3">
                 {/* <div className="flex items-center gap-2">
