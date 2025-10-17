@@ -11,21 +11,21 @@ const Trusted = () => {
                     {/* <div className='flex border gap-3'> */}
                         <div className='flex gap-3 items-center'>
                             <div className='flex flex-col gap-3 items-end'>
-                                <div className='p-3 border rounded-2xl'>
+                                <div className='p-3 border-[#F353251A] bg-[#F353251A] rounded-2xl'>
                                     <img src={"/assets/icon-1.svg"} alt='icon'/>
                                 </div>
-                                <div className='p-5 border rounded-2xl'>
+                                <div className='p-5 border-[#FFBA001A] bg-[#FFBA001A] rounded-2xl'>
                                     <img src={"/assets/icon-3.svg"} alt='icon'/>
                                 </div>
-                                <div className='p-3 border rounded-2xl'>
+                                <div className='p-3 border-[#1c60bf1a] bg-[#1c60bf1a] rounded-2xl'>
                                     <img src={"/assets/icon-5.svg"} alt='icon'/>
                                 </div>
                             </div>
                             <div className='flex flex-col gap-3 items-start'>
-                                <div className='p-3 border rounded-2xl'>
+                                <div className='p-3 border-[#33d6641a] bg-[#33d6641a] rounded-2xl'>
                                     <img src={"/assets/icon-2.svg"} alt='icon'/>
                                 </div>
-                                <div className='p-5 border rounded-2xl'>
+                                <div className='p-5 border-[#4285f41a] bg-[#4285f41a] rounded-2xl'>
                                     <img src={"/assets/icon-4.svg"} alt='icon'/>
                                 </div>
                             </div>

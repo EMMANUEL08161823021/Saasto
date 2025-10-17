@@ -1,76 +1,114 @@
-import React from 'react'
+"use client"
+import React, { useState } from "react";
 
 const Flexible = () => {
-    return (
-        <section className="relative bg-white overflow-hidden">
-        <br/>
-        <br/>
-        {/* decorative left image (hidden on small screens) */}
-        {/* <img
-            className="pointer-events-none hidden md:block absolute left-0 top-1/2 -translate-y-1/2 opacity-70"
-            src={"/assets/chess.svg"}
-            alt=""
-            aria-hidden="true"
-        /> */}
+  // billing: "monthly" or "yearly"
+  const [billing, setBilling] = useState("monthly");
 
-        <div className="max-w-5xl h-[100%] mx-auto px-6">
-            <div className="relative text-center px-4 py-8 md:px-8 md:py-12 rounded-lg">
-            {/* decorative right image (hidden on small screens) */}
-            <img className='absolute right-0 top-[20%]' src={"/assets/chess.svg"} alt='alt'/>
+  // Prices: keep the Free plan at $0, Premium changes
+  const premiumMonthly = 3; // $3 / mo
+  const premiumYearly = 30; // $30 / yr
+
+  const isYearly = billing === "yearly";
+
+  return (
+    <section className="relative bg-white overflow-hidden">
+      <br />
+      <br />
+        <img className="absolute hidden md:block w-1/8 left-[0%] top-[45%]" src={"/assets/Hand.svg"} alt="alt" />
 
 
-            <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>
-                Flexible work, Simple Price
-            </h1>
+      <div className="max-w-5xl h-[100%] mx-auto px-6">
+        <div className="relative text-center px-4 py-8 md:px-8 md:py-12 rounded-lg">
+          {/* decorative right image (hidden on small screens) */}
+          <img className="absolute w-1/7 hidden md:block right-[12%] top-[24%]" src={"/assets/chess.png"} alt="alt" />
 
-            <p className="mt-3 text-xs md:text-base text-gray-600">
-                Growth your business with using us
-            </p>
+          <h1 className="leading-tight text-3xl font-extrabold text-gray-900 mb-2">
+            Flexible work, Simple Price
+          </h1>
 
-            <h4 className="mt-6 text-sm font-medium text-gray-700">Monthly Toggle Yearly</h4>
+          <p className="mt-3 text-xs md:text-base text-gray-600">Growth your business with using us</p>
 
-            <div className="mt-6 max-w-xl mx-auto flex flex-col md:flex-row gap-6 justify-center items-stretch">
-                <div className="flex h-[300px!important] flex-col items-center justify-center p-4 md:p-6 border border-[#FF553E] rounded-3xl w-full md:w-1/2">
-                <div className='text-center'>
-                    <div className="flex flex-col gap-2 text-center">
-                    <h2 className="text-lg font-semibold text-gray-900">Free</h2>
-                    <h3 className="text-sm text-gray-600">1 seat</h3>
-                    <h3 className="text-sm text-gray-600">2 projects</h3>
-                    </div>
-                    <p className="mt-3 text-2xl font-bold text-gray-900">$0<span className='text-xs'>/forever</span></p>
+          {/* Toggle */}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <span className={`text-sm ${!isYearly ? "font-semibold" : "text-gray-500"}`}>Monthly</span>
+
+            {/* accessible switch */}
+            <button
+              role="switch"
+              aria-checked={isYearly}
+              onClick={() => setBilling((b) => (b === "monthly" ? "yearly" : "monthly"))}
+              className={`relative inline-flex items-center h-6 w-12 rounded-full transition-colors focus:outline-none ${
+                isYearly ? "bg-[#FF553E]" : "bg-gray-200"
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+                  isYearly ? "translate-x-6" : "translate-x-1"
+                }`}
+              />
+            </button>
+
+            <span className={`text-sm ${isYearly ? "font-semibold" : "text-gray-500"}`}>Yearly</span>
+          </div>
+
+          <div className="mt-6 max-w-xl mx-auto flex flex-col md:flex-row gap-6 justify-center items-stretch">
+            {/* Free Card */}
+            <div
+              className="flex h-[300px] flex-col items-center justify-center p-4 md:p-6 border border-[#FF553E] w-full md:w-1/2"
+              style={{ borderRadius: "60px" }}
+            >
+              <div className="text-center">
+                <div className="flex flex-col gap-2 text-center">
+                  <h2 className="text-lg font-semibold text-gray-900">Free</h2>
+                  <h3 className="text-sm text-gray-600">1 seat</h3>
+                  <h3 className="text-sm text-gray-600">2 projects</h3>
                 </div>
+                {/* Free stays the same */}
+                <p className="mt-3 text-2xl font-bold text-gray-900">
+                  $0
+                  <span className="text-xs font-extralight">/forever</span>
+                </p>
+              </div>
 
-                <div className="mt-6">
-                    <button className="w-full px-6 py-3 rounded-full text-xs bg-[#FF553E] text-white shadow hover:brightness-95 transition">
-                    Start 14 Days Trial
-                    </button>
-                </div>
-                </div>
-
-                <div className="flex h-[300px!important] flex-col items-center justify-center p-4 md:p-6 rounded-3xl w-full md:w-1/2 bg-[#FF553E] text-white">
-                <div className='text-center'>
-                    <div className="flex flex-col gap-2 text-center">
-                    <h2 className="text-lg font-semibold">Premium</h2>
-                    <h3 className="text-sm">Unlimited seats</h3>
-                    <h3 className="text-sm">Unlimited projects</h3>
-                    </div>
-                    <p className="mt-3 text-2xl font-bold">$30<span className='text-xs'>/forever</span></p>
-                </div>
-
-                <div className="mt-6">
-                    <button className="w-full px-6 py-3 text-xs rounded-full bg-white text-[#FF553E] shadow hover:opacity-90 transition">
-                    Start 14 Days Trial
-                    </button>
-                </div>
-                </div>
+              <div className="mt-6">
+                <button className="w-full px-6 py-3 rounded-full text-xs bg-[#FF553E] text-white shadow hover:brightness-95 transition">
+                  Start 14 Days Trial
+                </button>
+              </div>
             </div>
+
+            {/* Premium Card (prices change based on toggle) */}
+            <div
+              className="flex h-[300px] flex-col z-10 items-center justify-center p-4 md:p-6 w-full md:w-1/2 bg-[#FF553E] text-white"
+              style={{ borderRadius: "60px" }}
+            >
+              <div className="text-center">
+                <div className="flex flex-col gap-2 text-center">
+                  <h2 className="text-lg font-semibold">Premium</h2>
+                  <h3 className="text-sm">Unlimited seats</h3>
+                  <h3 className="text-sm">Unlimited projects</h3>
+                </div>
+
+                <p className="mt-3 text-2xl font-bold">
+                  {isYearly ? `$${premiumYearly}` : `$${premiumMonthly}`}
+                  <span className="text-xs font-extralight">{isYearly ? "/yr" : "/mo"}</span>
+                </p>
+              </div>
+
+              <div className="mt-6">
+                <button className="w-full px-6 py-3 text-xs rounded-full bg-white text-[#FF553E] shadow hover:opacity-90 transition">
+                  Start 14 Days Trial
+                </button>
+              </div>
             </div>
+          </div>
         </div>
-        <br/>
-        <br/>
-        </section>
+      </div>
+      <br />
+      <br />
+    </section>
+  );
+};
 
-    )
-}
-
-export default Flexible
+export default Flexible;

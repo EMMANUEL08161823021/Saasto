@@ -118,7 +118,7 @@ const Hero = () => {
               draggable={false}
             />
             <motion.img
-              className="absolute block md:hidden right-[-2%] w-1/5 top-[-30%] pointer-events-none"
+              className="absolute block md:hidden right-[12%] w-1/5 top-[-30%] pointer-events-none"
               src="/assets/Alarm_Clock.svg"
               alt="Alarm Clock"
               variants={variants}
@@ -128,9 +128,21 @@ const Hero = () => {
               style={{ transformOrigin: '50% 70%' }}
               draggable={false}
             />
-            <h1 className="font-sans font-extrabold text-2xl md:text-4xl  leading-tight text-gray-900">
-              A Collaborative Time <br className="hidden sm:block" /> Tracking That You Need
+            <h1 className="font-sans font-extrabold text-3xl md:text-4xl leading-tight text-gray-900">
+              A Collaborative <br className="block sm:hidden" /> Time <br className="hidden sm:block" />
+              <span className="relative inline-block">
+                {/* decorative shape behind the word */}
+                <img
+                  src={"/assets/shape.svg"}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 -z-10 w-9 h-9 sm:w-12 sm:h-12 opacity-80 pointer-events-none"
+                />
+                <span className="relative">Tracking </span>
+              </span>
+              That You Need
             </h1>
+
 
             <p className="mt-4 text-gray-600 text-xs max-w-2xl mx-auto">
               An enim nullam tempor sapien gravida donec enim ipsum porta justo congue magna <br className="hidden sm:block" />
@@ -157,17 +169,17 @@ const Hero = () => {
           animate={inView ? 'show' : 'hidden'}
         >
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Active users">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900'>">{formatToKPlus(n1)}</h1>
+            <h1 className="text-3xl font-bold text-gray-900">{formatToKPlus(n1)}</h1>
             <p className="text-xs text-gray-500">Active Users</p>
           </motion.div>
 
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Downloads">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{formatToKPlus(n2)}</h1>
+            <h1 className="text-3xl font-bold text-gray-900">{formatToKPlus(n2)}</h1>
             <p className="text-xs text-gray-500">Downloads</p>
           </motion.div>
 
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Customers">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{formatToKPlus(n3)}</h1>
+            <h1 className="text-3xl font-bold text-gray-900">{formatToKPlus(n3)}</h1>
             <p className="text-xs text-gray-500">Customers</p>
           </motion.div>
         </motion.div>

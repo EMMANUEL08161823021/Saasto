@@ -59,7 +59,7 @@ export default function Navbar() {
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 aria-controls="mobile-menu"
-                className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="md:hidden p-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={() => setOpen((s) => !s)}
               >
                 {/* simple hamburger icon */}
@@ -81,7 +81,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.18 }}
-              className="fixed inset-0 z-40 bg-black/40 md:hidden"
+              className="fixed inset-0 z-40 bg-black/40  md:hidden"
               onClick={() => setOpen(false)}
             />
           )}
