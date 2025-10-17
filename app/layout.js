@@ -14,6 +14,11 @@ const poppins = Poppins({
 export const metadata = {
   title: "Saasto",
   description: "A collaboration time tracking that you need",
+  icons: {
+    icon: "/favicon.ico",                 // fallback / default
+    shortcut: "/favicon-32x32.png",       // used for some browsers
+    apple: "/apple-touch-icon.png",       // iOS
+  },
 };
 
 
