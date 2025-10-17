@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className="bg-white text-gray-700">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-6">
+      <div className="w-full sm:max-w-xl md:max-w-4xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 py-6">
           {/* Logo + Brand */}
           <div className="flex items-center gap-4">
@@ -30,8 +30,8 @@ const Footer = () => {
           <div className="social-media flex flex-wrap items-center gap-3 text-sm">
             <div className="flex items-center gap-2">
               {/* <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon> */}
-              <a href="#" className="hover:text-blue-600"><li className='list-none'>Contact</li></a>
-              <h3 className="truncate">Linkedin</h3>
+              <a href="#" className="hover:text-blue-600"><li className='list-none'>Linkedin</li></a>
+              {/* <h3 className="truncate"></h3> */}
             </div>
             <div className="flex items-center gap-2">
               {/* <icon className="w-5 h-5 inline-block" aria-hidden="true">icon</icon> */}
