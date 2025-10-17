@@ -23,7 +23,7 @@ const Flexible = () => {
                 Flexible work, Simple Price
             </h1>
 
-            <p className="mt-3 text-sm md:text-base text-gray-600">
+            <p className="mt-3 text-xs md:text-base text-gray-600">
                 Growth your business with using us
             </p>
 

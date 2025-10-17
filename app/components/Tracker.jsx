@@ -25,7 +25,7 @@ const Tracker = () => {
                 <img src={"/assets/minute.svg"} alt="wallet"/>
               </div>
               <div>
-                <h4 className="font-semibold text-lg">Time Tracking</h4>
+                <h4 className="font-bold text-gray-900 text-lg">Time Tracking</h4>
                 <p className="text-xs text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
               </div>
             </div>
@@ -39,7 +39,7 @@ const Tracker = () => {
               </div>
 
               <div>
-                <h4 className="font-semibold text-lg">Expenses</h4>
+                <h4 className="font-bold text-gray-900 text-lg">Expenses</h4>
                 <p className="text-xs text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const Tracker = () => {
                 <img src={"/assets/wallet.svg"} alt="wallet"/>
               </div>
               <div>
-                <h4 className="font-semibold text-lg">Budget controlling</h4>
+                <h4 className="font-bold text-gray-900 text-lg">Budget controlling</h4>
                 <p className="text-xs text-gray-600">Easily set budgets and monitor spending against targets</p>
               </div>
             </div>

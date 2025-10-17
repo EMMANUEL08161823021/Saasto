@@ -47,7 +47,7 @@ const Client = () => {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="flex flex-col gap-3 justify-center">
           <div className="flex flex-col gap-2">
-            <h1 className="font-bold text-3xl">What our client says</h1>
+            <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>What our client says</h1>
             <p className="text-sm text-gray-600">Growth your business with using us</p>
           </div>
 
@@ -63,7 +63,7 @@ const Client = () => {
 
             {/* right: enlarged testimonial content */}
             <div className="flex-1 max-w-xl">
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed" aria-live="polite">
+              <p className="text-sm text-gray-600 leading-relaxed" aria-live="polite">
                 {testimonials[index].text}
               </p>
 
@@ -77,7 +77,7 @@ const Client = () => {
                 <button
                   onClick={prev}
                   aria-label="Previous testimonial"
-                  className="px-4 py-2 rounded-md border bg-white hover:bg-gray-50 transition text-sm"
+                  className="px-4 py-2 rounded-md border border-black text-sm text-gray-600 bg-white hover:bg-gray-50 transition"
                 >
                   Prev
                 </button>
@@ -96,7 +96,7 @@ const Client = () => {
                 <button
                   onClick={next}
                   aria-label="Next testimonial"
-                  className="px-4 py-2 rounded-md border bg-white hover:bg-gray-50 transition text-sm"
+                  className="px-4 py-2 rounded-md border border-black bg-white text-gray-600 hover:bg-gray-50 transition text-sm"
                 >
                   Next
                 </button>

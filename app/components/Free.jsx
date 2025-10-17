@@ -16,7 +16,7 @@ const Free = () => {
                 <div className="flex flex-col w-full lg:flex-row justify-between items-center">
 
                     <div className='report flex flex-col text-left gap-4'>
-                        <h1 className='font-bold text-2xl md:text-3xl'>Get it now for free</h1>
+                        <h1 className='font-bold text-2xl text-gray-900 md:text-3xl'>Get it now for free</h1>
                         <p className='text-sm md:text-base text-gray-600'>We are offering free debit cards once you sing up and <br className="hidden lg:block"/>
                         order a card. we wont chargeyou for our debit card.</p>
 
@@ -48,7 +48,7 @@ const Free = () => {
 
                     {/* wrap phone image so we can center it on small screens without touching the <img> */}
                     {/* <img className='border' src={"/assets/iphone.svg"} alt='iphone'/> */}
-                    <img className='max-w-xl lg:w-1/4' src={"/assets/mobile-screen.svg"} alt='mobile'/>
+                    <img className='max-w-xl mx-3 lg:w-1/4' src={"/assets/mobile-screen.svg"} alt='mobile'/>
 
                     {/* <div className="flex justify-center md:justify-end">
                     </div> */}

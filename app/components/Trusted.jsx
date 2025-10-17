@@ -35,8 +35,8 @@ const Trusted = () => {
 
                     {/* Card 2 */}
                     <div className='report flex flex-col p-3 text-left gap-3'>
-                        <h1 className='font-bold text-3xl'>See Our Trusted <br className="hidden sm:block"/>Partners</h1>
-                        <p>An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden sm:block"/>justo
+                        <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>See Our Trusted <br className="hidden sm:block"/>Partners</h1>
+                        <p className='text-gray-900 text-sm'>An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden sm:block"/>justo
                         congue magna at pretium purus pretium ligula</p>
                         <div className="mt-8">
                             <button className="px-6 py-3 rounded-full border border-[#FF553E] text-[#FF553E] shadow hover:bg-[#FF553E] hover:text-white transition">

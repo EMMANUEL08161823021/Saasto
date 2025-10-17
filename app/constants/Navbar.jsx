@@ -108,7 +108,7 @@ export default function Navbar() {
                 </div> */}
                 <button
                   aria-label="Close sidebar"
-                  className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="p-2 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setOpen(false)}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@ export default function Navbar() {
               </div>
 
               <nav className="p-4">
-                <ul className="flex flex-col gap-4">
+                <ul className="flex text-gray-900 text-xs flex-col gap-4">
                   <a href="#"><li className="text-lg">Demos</li></a>
                   <a href="#"><li className="text-lg">Features</li></a>
                   <a href="#"><li className="text-lg">Pricing</li></a>
@@ -126,8 +126,8 @@ export default function Navbar() {
                 </ul>
 
                 <div className="mt-6 flex flex-col gap-3">
-                  <button className="w-full px-4 py-2 rounded-md border border-[#FF553E]">Login</button>
-                  <button className="w-full px-4 py-2 rounded-md bg-[#FF553E] text-white">SignUp</button>
+                  <button className="w-full px-4 py-2 text-sm text-gray-900 rounded-md border border-[#FF553E]">Login</button>
+                  <button className="w-full px-4 py-2 text-sm rounded-md bg-[#FF553E] text-white">SignUp</button>
                 </div>
 
                 {/* Optional small footer */}

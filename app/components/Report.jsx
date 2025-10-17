@@ -44,7 +44,7 @@ const Report = () => {
                 </p>
 
                 <div className='content flex flex-col gap-4'>
-                    <div className='flex gap-3 items-start'>
+                    <div className='flex gap-4 items-start'>
                     <div className='p-3 w-12 h-12 rounded-lg flex items-center justify-center flex-none bg-[#FA855C] border border-[#FA855C]'>
                         <img className='w-6 h-6 object-contain' height={30} width={30} src={"/assets/time.svg"} alt='time icon'/>
                     </div>

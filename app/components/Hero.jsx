@@ -151,23 +151,23 @@ const Hero = () => {
       <div className="bg-white h-auto w-full p-6 flex  justify-center">
         <motion.div
           ref={ref}
-          className="flex flex-col md:flex-row justify-center gap-6 max-w-4xl w-full border rounded-lg p-4"
+          className="flex flex-col md:flex-row justify-center gap-6 max-w-4xl w-full border border-black rounded-lg p-4"
           variants={container}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
         >
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Active users">
-            <h1 className="text-2xl md:text-3xl font-bold">{formatToKPlus(n1)}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900'>">{formatToKPlus(n1)}</h1>
             <p className="text-xs text-gray-500">Active Users</p>
           </motion.div>
 
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Downloads">
-            <h1 className="text-2xl md:text-3xl font-bold">{formatToKPlus(n2)}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{formatToKPlus(n2)}</h1>
             <p className="text-xs text-gray-500">Downloads</p>
           </motion.div>
 
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Customers">
-            <h1 className="text-2xl md:text-3xl font-bold">{formatToKPlus(n3)}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{formatToKPlus(n3)}</h1>
             <p className="text-xs text-gray-500">Customers</p>
           </motion.div>
         </motion.div>
