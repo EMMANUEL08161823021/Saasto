@@ -39,7 +39,7 @@ const Trusted = () => {
                         <p className='text-gray-900 text-xs'>An enim nullam tempor sapien gravida donec enim ipsum porta <br className="hidden md:block"/>justo
                         congue magna at pretium purus pretium ligula</p>
                         <div className="mt-8">
-                            <button className="px-6 py-3 rounded-full border border-[#FF553E] text-[#FF553E] shadow hover:bg-[#FF553E] hover:text-white transition">
+                            <button className="px-6 py-3 text-xs rounded-full border border-[#FF553E] text-[#FF553E] shadow hover:bg-[#FF553E] hover:text-white transition">
                             Get Started
                             </button>
                         </div>   

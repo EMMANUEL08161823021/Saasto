@@ -31,7 +31,7 @@ const Flexible = () => {
 
           {/* Toggle */}
           <div className="mt-6 flex items-center justify-center gap-4">
-            <span className={`text-sm ${!isYearly ? "font-semibold" : "text-gray-500"}`}>Monthly</span>
+            <span className={`text-sm ${!isYearly ? "font-semibold text-gray-900" : "text-gray-500"}`}>Monthly</span>
 
             {/* accessible switch */}
             <button
