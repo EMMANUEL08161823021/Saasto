@@ -33,13 +33,13 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <img src={"/assets/logo.svg"} alt="logo"/>
-                <h1 className="text-xl font-bold text-gray-900">Saasto</h1>
+                <h1 className="text-xl font-bold text-gray-900">SaaSto</h1>
               </div>
             </div>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-4">
-              <ul className="flex gap-4 text-xs">
+              <ul className="flex gap-4 text-sm">
                 <a href="#"><li className="hover:text-blue-600">Demos</li></a>
                 <a href="#"><li className="hover:text-blue-600">Features</li></a>
                 <a href="#"><li className="hover:text-blue-600">Pricing</li></a>
@@ -50,8 +50,8 @@ export default function Navbar() {
             {/* Actions + Mobile Hamburger */}
             <div className="flex items-center gap-3">
               <div className="hidden sm:flex gap-3">
-                <button className="px-3 py-1 text-xs rounded-md text-[#FF553E]">Login</button>
-                <button className="px-3 py-2 text-xs rounded-lg bg-[#FF553E] text-white">Sign up</button>
+                <button className="px-3 py-1 text-sm rounded-md text-[#FF553E]">Login</button>
+                <button className="px-3 py-2 text-sm rounded-lg bg-[#FF553E] text-white">Sign up</button>
               </div>
 
               {/* Hamburger for mobile */}
@@ -118,7 +118,7 @@ export default function Navbar() {
               </div>
 
               <nav className="p-4">
-                <ul className="flex text-gray-900 text-xs flex-col gap-4">
+                <ul className="flex text-gray-900 text-sm flex-col gap-4">
                   <a href="#"><li className="text-lg">Demos</li></a>
                   <a href="#"><li className="text-lg">Features</li></a>
                   <a href="#"><li className="text-lg">Pricing</li></a>

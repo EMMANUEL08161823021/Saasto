@@ -18,9 +18,19 @@ const Free = () => {
                 <div className="flex flex-col w-full lg:flex-row justify-between items-center">
 
                     <div className='report flex flex-col text-left gap-4'>
-                        <h1 className='font-bold text-2xl text-gray-900 md:text-3xl'>Get it now for free</h1>
+                        <h1 className='font-bold text-2xl text-gray-900 md:text-3xl'>Get it now for 
+                            <span className="relative inline-block">
+                                <img
+                                src={"/assets/shape.svg"}
+                                alt=""
+                                aria-hidden="true"
+                                className="absolute left-1/4 top-[85%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
+                                />
+                                <span className="relative px-1.5"> free</span>
+                            </span>
+                        </h1>
                         <p className='text-sm md:text-sm text-gray-600'>We are offering free debit cards once you sing up and <br className="hidden lg:block"/>
-                        order a card. we wont chargeyou for our debit card.</p>
+                        order a card. we wont charge you for our debit card.</p>
 
                         <div className="flex flex-col sm:flex-row gap-3 mt-6">
                             <button className="sm:flex-1 flex items-center justify-center gap-2 py-3 rounded-full border bg-[#FF553E] text-white shadow-sm transition">
@@ -28,7 +38,7 @@ const Free = () => {
                                 <img src={"/assets/apple.svg"} alt='apple'/>
                             </div>
                             <div className="text-left">
-                                <h4 className="text-xs">Download on the store</h4>
+                                <h4 className="text-sm">Download on the store</h4>
                                 <span className="text-sm font-semibold">App Store</span>
                             </div>
                             </button>
@@ -38,7 +48,7 @@ const Free = () => {
                                 <img src={"/assets/playstore.svg"} alt='playstore'/>
                             </div>
                             <div className="text-left">
-                                <h4 className="text-xs">Get it on</h4>
+                                <h4 className="text-sm">Get it on</h4>
                                 <span className="text-sm font-semibold">Google Play</span>
                             </div>
                             </button>

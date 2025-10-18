@@ -143,12 +143,12 @@ const Hero = () => {
             </h1>
 
 
-            <p className="mt-4 text-gray-600 text-xs max-w-2xl mx-auto">
+            <p className="mt-4 text-gray-600 text-sm max-w-2xl mx-auto">
               Simplify team timekeeping with accurate reports, effortless timers, intuitive controls, and clear insights to boost daily productivity consistently.
             </p>
 
             <div className="mt-8">
-              <button className="px-8 py-3 rounded-full bg-[#FF553E] text-white text-xs font-medium shadow hover:bg-[#e14834] transition-all duration-200">
+              <button className="px-8 py-3 rounded-full bg-[#FF553E] text-white text-sm font-medium shadow hover:bg-[#e14834] transition-all duration-200">
                 Start 14 Days Trial
               </button>
             </div>
@@ -168,17 +168,17 @@ const Hero = () => {
         >
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Active users">
             <h1 className="text-3xl font-bold text-gray-900">{formatToKPlus(n1)}</h1>
-            <p className="text-xs text-gray-500">Active Users</p>
+            <p className="text-sm text-gray-500">Active Users</p>
           </motion.div>
 
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Downloads">
             <h1 className="text-3xl font-bold text-gray-900">{formatToKPlus(n2)}</h1>
-            <p className="text-xs text-gray-500">Downloads</p>
+            <p className="text-sm text-gray-500">Downloads</p>
           </motion.div>
 
           <motion.div className="flex-1 text-center p-4" variants={card} role="group" aria-label="Customers">
             <h1 className="text-3xl font-bold text-gray-900">{formatToKPlus(n3)}</h1>
-            <p className="text-xs text-gray-500">Customers</p>
+            <p className="text-sm text-gray-500">Customers</p>
           </motion.div>
         </motion.div>
       </div>

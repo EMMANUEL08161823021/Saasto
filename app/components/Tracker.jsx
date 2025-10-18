@@ -11,8 +11,20 @@ const Tracker = () => {
       <img className="absolute hidden lg:block border scale-50 right-0" src={"/assets/target.svg"} alt="target" />
 
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>How our Tracker work for you</h1>
-        <p className="mt-3 text-xs text-gray-600 max-w-3xl mx-auto">
+        <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>
+          How our 
+          <span className="relative inline-block">
+            <img
+              src={"/assets/shape.svg"}
+              alt=""
+              aria-hidden="true"
+              className="absolute left-1/4 top-[90%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
+            />
+            <span className="relative pr-1.5">Tracker</span>
+          </span>
+          
+          work for you</h1>
+        <p className="mt-3 text-sm text-gray-600 max-w-3xl mx-auto">
           An enim nullam tempor sapien gravida donec enim ipsum porta justo congue
           magna at pretium purus pretium ligula
         </p>
@@ -26,7 +38,7 @@ const Tracker = () => {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">Time Tracking</h4>
-                <p className="text-xs text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
+                <p className="text-sm text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
               </div>
             </div>
 
@@ -40,7 +52,7 @@ const Tracker = () => {
 
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">Expenses</h4>
-                <p className="text-xs text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
+                <p className="text-sm text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
               </div>
             </div>
 
@@ -50,7 +62,7 @@ const Tracker = () => {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">Budget controlling</h4>
-                <p className="text-xs text-gray-600">Easily set budgets and monitor spending against targets</p>
+                <p className="text-sm text-gray-600">Easily set budgets and monitor spending against targets</p>
               </div>
             </div>
           </div>
@@ -64,14 +76,14 @@ const Tracker = () => {
                   <h1 className="text-2xl font-bold">$12,000</h1>
                   <span className="text-green-600 font-medium">+12%</span>
                 </div>
-                <p className="mt-2 text-xs text-gray-500">Compared to $12,000 last year</p>
+                <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
               </div>
 
               <div className="hidden lg:block border rounded-lg p-4 bg-white shadow-sm">
                 <h3 className="text-sm text-gray-500">Sales trend</h3>
                 <div className="mt-2">
                   <h1 className="text-2xl font-bold">$12,000</h1>
-                  <p className="text-xs text-gray-500 mt-1">Compared to $12,000 last year</p>
+                  <p className="text-sm text-gray-500 mt-1">Compared to $12,000 last year</p>
                 </div>
               </div>
             </div>
@@ -82,7 +94,7 @@ const Tracker = () => {
                 <h1 className="text-2xl font-bold">$12,000</h1>
                 <span className="text-green-600 font-medium">+12%</span>
               </div>
-              <p className="mt-2 text-xs text-gray-500">Compared to $12,000 last year</p>
+              <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
             </div>
           </div>
         </div>

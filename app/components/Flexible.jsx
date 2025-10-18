@@ -23,11 +23,20 @@ const Flexible = () => {
           {/* decorative right image (hidden on small screens) */}
           <img className="absolute w-1/7 hidden md:block right-[12%] top-[24%]" src={"/assets/chess.png"} alt="alt" />
 
-          <h1 className="leading-tight text-3xl font-extrabold text-gray-900 mb-2">
-            Flexible work, <br className="block sm:hidden"/>Simple Price
+          <h1 className="leading-tight text-3xl font-extrabold z-20 text-gray-900 mb-2">
+            Flexible work, <br className="block sm:hidden"/>Simple 
+            <span className="relative inline-block">
+                <img
+                src={"/assets/shape.svg"}
+                alt=""
+                aria-hidden="true"
+                className="absolute left-1/4 top-[85%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
+                />
+                <span className="relative px-1.5"> Price</span>
+            </span>
           </h1>
 
-          <p className="mt-3 text-xs md:text-base text-gray-600">Growth your business with using us</p>
+          <p className="mt-3 text-sm md:text-base text-gray-600">Growth your business with using us</p>
 
           {/* Toggle */}
           <div className="mt-6 flex items-center justify-center gap-4">
@@ -67,12 +76,12 @@ const Flexible = () => {
                 {/* Free stays the same */}
                 <p className="mt-3 text-2xl font-bold text-gray-900">
                   $0
-                  <span className="text-xs font-extralight">/forever</span>
+                  <span className="text-sm font-extralight">/forever</span>
                 </p>
               </div>
 
               <div className="mt-6">
-                <button className="w-full px-6 py-3 rounded-full text-xs bg-[#FF553E] text-white shadow hover:brightness-95 transition">
+                <button className="w-full px-6 py-3 rounded-full text-sm bg-[#FF553E] text-white shadow hover:brightness-95 transition">
                   Start 14 Days Trial
                 </button>
               </div>
@@ -92,12 +101,12 @@ const Flexible = () => {
 
                 <p className="mt-3 text-2xl font-bold">
                   {isYearly ? `$${premiumYearly}` : `$${premiumMonthly}`}
-                  <span className="text-xs font-extralight">{isYearly ? "/yr" : "/mo"}</span>
+                  <span className="text-sm font-extralight">{isYearly ? "/yr" : "/mo"}</span>
                 </p>
               </div>
 
               <div className="mt-6">
-                <button className="w-full px-6 py-3 text-xs rounded-full bg-white text-[#FF553E] shadow hover:opacity-90 transition">
+                <button className="w-full px-6 py-3 text-sm rounded-full bg-white text-[#FF553E] shadow hover:opacity-90 transition">
                   Start 14 Days Trial
                 </button>
               </div>

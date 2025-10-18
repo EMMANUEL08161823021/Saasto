@@ -47,13 +47,23 @@ const Client = () => {
       <div className="w-full sm:max-w-xl md:max-w-4xl mx-auto px-4 text-left sm:text-center">
         <div className="flex flex-col gap-3 justify-center">
           <div className="flex flex-col text-left sm:text-center gap-2">
-            <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>What our client says</h1>
+            <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>What our 
+              <span className="relative inline-block">
+                <img
+                src={"/assets/shape.svg"}
+                alt=""
+                aria-hidden="true"
+                className="absolute left-1/4 top-[85%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
+                />
+                <span className="relative px-1.5"> client  </span>  
+              </span>              
+              says</h1>
             <p className="text-sm text-gray-600">Growth your business with using us</p>
           </div>
 
           {/* BIGGER, CENTERED card-paginate */}
           <div
-            className="card-pagainate card-paginate mx-auto mt-6 flex flex-col md:flex-row items-center md:items-stretch gap-8 text-left justify-center
+            className="card-pagainate card-paginate mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-8 text-left justify-center
                        max-w-3xl w-full"
           >
             {/* left: larger image box — kept the <img> tag inside exactly as you had it */}
