@@ -98,7 +98,7 @@ const Hero = () => {
       <div className='h-[80%] px-4 sm:px-6 lg:px-8" lg:px-8"'>
 
         {/* Left Images */}
-        <img className='absolute hidden lg:block" left-0 top-[20%]' src={"/assets/mobile-screen-1.svg"} alt='mobile-screen-1' />
+        {/* <img className='absolute hidden lg:block" left-0 top-[20%]' src={"/assets/mobile-screen-1.svg"} alt='mobile-screen-1' /> */}
         {/* <div className='absolute left-[15%] top-[10%] border' style={{height: "200px", width: "200px"}}></div> */}
         {/* <img className='absolute left-[20%] top-[13%] scale-50' src={"/assets/Alarm_Clock.svg"} alt='Alarm Clock' /> */}
 
@@ -107,7 +107,7 @@ const Hero = () => {
           <div className="relative max-w-4xl mx-auto text-left sm:text-center ">
             <img className='absolute left-[-20%] w-1/5 top-[-60%]' src={"/assets/alarm-vector.svg"} alt='Alarm Clock' />
             <motion.img
-              className="absolute hidden md:block left-[-5%] w-1/5 top-[-50%] pointer-events-none"
+              className="absolute hidden sm:block left-[-5%] w-1/5 top-[-50%] pointer-events-none"
               src="/assets/Alarm_Clock.svg"
               alt="Alarm Clock"
               variants={variants}
@@ -118,7 +118,7 @@ const Hero = () => {
               draggable={false}
             />
             <motion.img
-              className="absolute block md:hidden right-[12%] w-1/5 top-[-30%] pointer-events-none"
+              className="absolute block sm:hidden right-[12%] w-1/5 top-[-30%] pointer-events-none"
               src="/assets/Alarm_Clock.svg"
               alt="Alarm Clock"
               variants={variants}
@@ -128,25 +128,23 @@ const Hero = () => {
               style={{ transformOrigin: '50% 70%' }}
               draggable={false}
             />
-            <h1 className="font-sans font-extrabold text-3xl md:text-4xl leading-tight text-gray-900">
-              A Collaborative <br className="block sm:hidden" /> Time <br className="hidden sm:block" />
+            <h1 className="font-sans font-extrabold z-20 text-3xl md:text-4xl leading-tight text-gray-900">
+              A Collaborative <br className='block sm:hidden'/> Time <br className="hidden sm:block" /> 
               <span className="relative inline-block">
-                {/* decorative shape behind the word */}
                 <img
                   src={"/assets/shape.svg"}
                   alt=""
                   aria-hidden="true"
-                  className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 -z-10 w-9 h-9 sm:w-12 sm:h-12 opacity-80 pointer-events-none"
+                  className="absolute left-1/4 top-[90%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
                 />
-                <span className="relative">Tracking </span>
+                <span className="relative pr-1.5">Tracking</span>
               </span>
               That You Need
             </h1>
 
 
             <p className="mt-4 text-gray-600 text-xs max-w-2xl mx-auto">
-              An enim nullam tempor sapien gravida donec enim ipsum porta justo congue magna <br className="hidden sm:block" />
-              at pretium purus pretium ligula.
+              Simplify team timekeeping with accurate reports, effortless timers, intuitive controls, and clear insights to boost daily productivity consistently.
             </p>
 
             <div className="mt-8">
