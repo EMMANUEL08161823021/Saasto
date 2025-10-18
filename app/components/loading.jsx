@@ -51,7 +51,7 @@ export default function SiteLoader({ visible }) {
             style={{ transformOrigin: '50% 50%' }}
             draggable={false}
         />
-        <h1 className="text-xl font-bold text-center text-gray-900">Saasto</h1>
+        <h1 className="text-xl font-bold text-center text-gray-900">SaaSto</h1>
 
         </motion.div>
 

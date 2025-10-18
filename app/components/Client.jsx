@@ -87,7 +87,7 @@ const Client = () => {
                 <button
                   onClick={prev}
                   aria-label="Previous testimonial"
-                  className="px-4 py-2 rounded-md border border-black text-sm text-gray-600 bg-white hover:bg-gray-50 transition"
+                  className="px-4 py-2 rounded-md border border-[#FF553E] text-[#FF553E] text-sm bg-white shadow hover:bg-[#FF553E] hover:text-white transition"
                 >
                   Prev
                 </button>
@@ -106,7 +106,7 @@ const Client = () => {
                 <button
                   onClick={next}
                   aria-label="Next testimonial"
-                  className="px-4 py-2 rounded-md border border-black bg-white text-gray-600 hover:bg-gray-50 transition text-sm"
+                  className="px-4 py-2 rounded-md border border-[#FF553E] text-[#FF553E] bg-white shadow hover:bg-[#FF553E] hover:text-white transition text-sm"
                 >
                   Next
                 </button>

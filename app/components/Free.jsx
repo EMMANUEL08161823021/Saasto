@@ -2,9 +2,8 @@ import React from 'react'
 
 const Free = () => {
     return (
-        <section className="overflow-hidden relative">
+        <section className="overflow-hidden relative lg:h-[80vh]">
 
-            <br/>
             <br/>
             <br/>
             {/* <br/> */}
@@ -15,7 +14,7 @@ const Free = () => {
 
             <div className="relative w-full sm:max-w-xl md:max-w-4xl mx-auto px-4 text-center">
                 {/* Feature Grid */}
-                <div className="flex flex-col w-full lg:flex-row justify-between items-center">
+                <div className="flex flex-col md:flex-row justify-between items-center">
 
                     <div className='report flex flex-col text-left gap-4'>
                         <h1 className='font-bold text-2xl text-gray-900 md:text-3xl'>Get it now for 
@@ -38,8 +37,8 @@ const Free = () => {
                                 <img src={"/assets/apple.svg"} alt='apple'/>
                             </div>
                             <div className="text-left">
-                                <h4 className="text-sm">Download on the store</h4>
-                                <span className="text-sm font-semibold">App Store</span>
+                                <h4 className="text-xs text-nowrap">Download on the store</h4>
+                                <span className="text-xs font-semibold">App Store</span>
                             </div>
                             </button>
 
@@ -48,32 +47,25 @@ const Free = () => {
                                 <img src={"/assets/playstore.svg"} alt='playstore'/>
                             </div>
                             <div className="text-left">
-                                <h4 className="text-sm">Get it on</h4>
-                                <span className="text-sm font-semibold">Google Play</span>
+                                <h4 className="text-xs">Get it on</h4>
+                                <span className="text-xs font-semibold">Google Play</span>
                             </div>
                             </button>
 
                         </div>
                     </div>
 
-                    {/* <br className='block lg:hidden'/> */}
+                    <br/>
+                    <br/>
 
-                    {/* wrap phone image so we can center it on small screens without touching the <img> */}
-                    {/* <img className='border' src={"/assets/iphone.svg"} alt='iphone'/> */}
-                    <div className=''>
-
-                    <img className='absolute hidden md:block bottom-[-100%] right-[0%] max-w-xs mx-3 lg:w-1/4' src={"/assets/mobile-screen.svg"} alt='mobile'/>
-                    </div>
-
-                    {/* <div className="flex justify-center md:justify-end">
-                    </div> */}
+                    <img className='hidden md:block max-w-xs lg:mb-[-20%] mx-3 md:w-1/3' src={"/assets/mobile-screen.svg"} alt='mobile'/>    
 
                 </div>
             </div>
-            <br/>
             {/* <br/> */}
-            <br/>
-            <br/>
+            <br className='block lg:hidden'/>
+            <br className='block lg:hidden'/>
+            <br className='block lg:hidden'/>
         </section>
     )
 }

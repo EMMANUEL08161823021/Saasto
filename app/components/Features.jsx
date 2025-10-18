@@ -28,11 +28,19 @@ export default function Features() {
       <br />
       <br />
       <div className="w-full sm:max-w-xl md:max-w-4xl relative mx-auto px-4 text-center">
-        <img
-          className="absolute h-1/3 hidden lg:block top-[0%] right-[10%]"
-          src={"/assets/rocket.svg"}
-          alt="rocket"
-        />
+      <motion.img
+        src={"/assets/rocket.svg"}
+        alt="rocket"
+        className="absolute h-1/3 hidden lg:block top-[0%] right-[10%]"
+        initial={{ opacity: 0, x: -80, y: 120, rotate: -18, scale: 0.9 }}
+        whileInView={{ opacity: 1, x: 60, y: -50, rotate: 8, scale: 1.02 }}
+        viewport={{ once: false, amount: 0.2 }}   // animate each time it scrolls into view
+        transition={{
+          duration: 1.4,
+          ease: [0.22, 1, 0.36, 1],                // smooth ease-out curve
+        }}
+        whileHover={{ y: -6, scale: 1.05 }}
+      />
         {/* Section Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -42,22 +50,21 @@ export default function Features() {
           className="text-3xl font-extrabold text-gray-900 mb-4"
         >
           Some Excellent{" "}
-          <span className="relative inline-block">
-            <img
-              src={"/assets/shape.svg"}
-              alt=""
-              aria-hidden="true"
-              className="absolute left-1/2 top-[85%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 pointer-events-none"
-            />
-            <span className="relative px-1.5">Features</span>
-          </span>{" "}
+                      <span className="relative inline-block">
+                <img
+                src={"/assets/shape.svg"}
+                alt=""
+                aria-hidden="true"
+                className="absolute left-1/3 top-[85%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
+                />
+                <span className="relative px-1.5"> Features</span>
+            </span>
           For You
         </motion.h2>
 
         <p className="mt-3 text-gray-600 text-sm">
-          Simplify team timekeeping with effortless timers, clear reports, and
-          intuitive controls that help teams stay focused{" "}
-          <br className="hidden sm:block" />
+          Simplify team time-keeping with effortless timers, clear reports, {" "} <br className="hidden sm:block" /> and
+          intuitive controls that help teams stay focused          
           and productive.
         </p>
 
