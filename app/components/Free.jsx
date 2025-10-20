@@ -65,7 +65,6 @@ const Free = () => {
             {/* <br/> */}
             <br className='block lg:hidden'/>
             <br className='block lg:hidden'/>
-            <br className='block lg:hidden'/>
         </section>
     )
 }

@@ -1,108 +1,190 @@
-import React from "react";
+// import React from "react";
 
-const Tracker = () => {
-  return (
-    <section className="relative bg-[#F3FDFE] overflow-hidden">
+// import {
+//   Chart as ChartJS,
+//   CategoryScale,
+//   LinearScale,
+//   BarElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+// } from "chart.js";
 
-      <br/>
-      <br/>
-      {/* kept image tags exactly as you originally had them */}
-      <img className="absolute border scale-50 left-[-60px] " src={"/assets/chart.svg"} alt="chart" />
-      <img className="absolute hidden lg:block border scale-50 right-0" src={"/assets/target.svg"} alt="target" />
+// import { Bar } from "react-chartjs-2";
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>
-          How our 
-          <span className="relative inline-block">
-            <img
-              src={"/assets/shape.svg"}
-              alt=""
-              aria-hidden="true"
-              className="absolute left-1/4 top-[90%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
-            />
-            <span className="relative pr-1.5">Tracker</span>
-          </span>
+
+// ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+
+// // Exported React component ready to drop into a Tailwind project
+
+
+
+
+
+// const Tracker = () => {
+
+//   const labels = ["January", "February", "March"];
+
+
+//   const data = {
+//     labels,
+//     datasets: [
+//       {
+//       label: "Earnings (USD)",
+//       data: [8000, 10000, 12000],
+//       // simple color set — feel free to change to gradients if you want
+//       backgroundColor: [
+//       "rgba(59,130,246,0.85)",
+//       "rgba(34,197,94,0.85)",
+//       "rgba(234,88,12,0.85)",
+//       ],
+//       borderRadius: 8,
+//       barThickness: 18,
+//       },
+//     ],
+//   };
+
+
+//   const options = {
+//     responsive: true,
+//     maintainAspectRatio: false,
+//     plugins: {
+//     legend: { display: false },
+//     tooltip: {
+//       callbacks: {
+//       label: (ctx) => {
+//       const value =  0;
+//       return `$${value.toLocaleString()}`;
+//       },
+//       },
+//     },
+//     },
+//     animation: {
+//       duration: 1000,
+//       easing: "easeOutQuart",
+//     },
+//     scales: {
+//       x: {
+//         grid: { display: false },
+//         ticks: { font: { size: 12 } },
+//       },
+//       y: {
+//         beginAtZero: true,
+//         ticks: {
+//         callback: (val) => `$${val / 1000}k`,
+//         font: { size: 12 },
+//         },
+//         grid: { color: "rgba(0,0,0,0.05)" },
+//       },
+//     },
+//   };
+
+
+//   return (
+//     <section className="relative bg-[#F3FDFE] overflow-hidden">
+
+//       <br/>
+//       <br/>
+//       {/* kept image tags exactly as you originally had them */}
+//       <img className="absolute border scale-50 left-[-60px] " src={"/assets/chart.svg"} alt="chart" />
+//       <img className="absolute hidden lg:block border scale-50 right-0" src={"/assets/target.svg"} alt="target" />
+
+//       <div className="max-w-4xl mx-auto px-6 text-center">
+//         <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>
+//           How our 
+//           <span className="relative inline-block">
+//             <img
+//               src={"/assets/shape.svg"}
+//               alt=""
+//               aria-hidden="true"
+//               className="absolute left-1/4 top-[90%] -translate-x-1/2 -translate-y-1/2 w-18 h-18  md:w-28 md:h-18 pointer-events-none"
+//             />
+//             <span className="relative pr-1.5">Tracker</span>
+//           </span>
           
-          work for you</h1>
-        <p className="mt-3 text-sm text-gray-600 max-w-3xl mx-auto">
-          An enim nullam tempor sapien gravida donec enim ipsum porta justo congue
-          magna at pretium purus pretium ligula
-        </p>
+//           work for you</h1>
+//         <p className="mt-3 text-sm text-gray-600 max-w-3xl mx-auto">
+//           An enim nullam tempor sapien gravida donec enim ipsum porta justo congue
+//           magna at pretium purus pretium ligula
+//         </p>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          {/* Left: Features list */}
-          <div className="content text-left flex flex-col gap-6">
-            <div className="flex gap-4 items-start">
-              <div className="p-3 w-12 h-12 rounded-lg bg-[#5BC17F] border-[#5BC17F] shadow-sm flex items-center justify-center">
-                <img src={"/assets/minute.svg"} alt="wallet"/>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 text-lg">Time Tracking</h4>
-                <p className="text-sm text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
-              </div>
-            </div>
+//         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+//           {/* Left: Features list */}
+//           <div className="content text-left flex flex-col gap-6">
+//             <div className="flex gap-4 items-start">
+//               <div className="p-3 w-12 h-12 rounded-lg bg-[#5BC17F] border-[#5BC17F] shadow-sm flex items-center justify-center">
+//                 <img src={"/assets/minute.svg"} alt="wallet"/>
+//               </div>
+//               <div>
+//                 <h4 className="font-bold text-gray-900 text-lg">Time Tracking</h4>
+//                 <p className="text-sm text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
+//               </div>
+//             </div>
 
-            <div className="flex gap-4 items-start">
-              <div className="p-3 w-12 h-12 rounded-lg bg-transparent shadow-sm flex items-center justify-center">
-                <img src={"/assets/hourglass.svg"} alt="wallet"/>
-              </div>
-              <div className="p-3 w-12 h-12 rounded-lg bg-[#FE6292] border-[#FE6292] shadow-sm flex items-center justify-center">
-                <img src={"/assets/hourglass.svg"} alt="wallet"/>
-              </div>
+//             <div className="flex gap-4 items-start">
+//               <div className="p-3 w-12 h-12 rounded-lg bg-transparent shadow-sm flex items-center justify-center">
+//                 <img src={"/assets/hourglass.svg"} alt="wallet"/>
+//               </div>
+//               <div className="p-3 w-12 h-12 rounded-lg bg-[#FE6292] border-[#FE6292] shadow-sm flex items-center justify-center">
+//                 <img src={"/assets/hourglass.svg"} alt="wallet"/>
+//               </div>
 
-              <div>
-                <h4 className="font-bold text-gray-900 text-lg">Expenses</h4>
-                <p className="text-sm text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
-              </div>
-            </div>
+//               <div>
+//                 <h4 className="font-bold text-gray-900 text-lg">Expenses</h4>
+//                 <p className="text-sm text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
+//               </div>
+//             </div>
 
-            <div className="flex gap-4 items-start">
-              <div className="p-3 w-12 h-12 rounded-lg bg-[#6B72FF] border-[#6B72FF] shadow-sm flex items-center justify-center">
-                <img src={"/assets/wallet.svg"} alt="wallet"/>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 text-lg">Budget controlling</h4>
-                <p className="text-sm text-gray-600">Easily set budgets and monitor spending against targets</p>
-              </div>
-            </div>
-          </div>
+//             <div className="flex gap-4 items-start">
+//               <div className="p-3 w-12 h-12 rounded-lg bg-[#6B72FF] border-[#6B72FF] shadow-sm flex items-center justify-center">
+//                 <img src={"/assets/wallet.svg"} alt="wallet"/>
+//               </div>
+//               <div>
+//                 <h4 className="font-bold text-gray-900 text-lg">Budget controlling</h4>
+//                 <p className="text-sm text-gray-600">Easily set budgets and monitor spending against targets</p>
+//               </div>
+//             </div>
+//           </div>
 
-          {/* Right: Stats / Cards */}
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="border rounded-lg p-4 bg-white shadow-sm">
-                <h3 className="text-sm text-gray-500">Total Earning</h3>
-                <div className="mt-2 flex items-end gap-4">
-                  <h1 className="text-2xl font-bold">$12,000</h1>
-                  <span className="text-green-600 font-medium">+12%</span>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
-              </div>
+//           {/* Right: Stats / Cards */}
+//           <div className="flex flex-col gap-4">
+//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//               <div className="border rounded-lg p-4 bg-white shadow-sm">
+//                 <h3 className="text-sm text-gray-500">Total Earning</h3>
+//                 <div className="mt-2 flex items-end gap-4">
+//                   <h1 className="text-2xl font-bold">$12,000</h1>
+//                   <span className="text-green-600 font-medium">+12%</span>
+//                 </div>
+//                 <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
+//               </div>
 
-              <div className="hidden lg:block border rounded-lg p-4 bg-white shadow-sm">
-                <h3 className="text-sm text-gray-500">Sales trend</h3>
-                <div className="mt-2">
-                  <h1 className="text-2xl font-bold">$12,000</h1>
-                  <p className="text-sm text-gray-500 mt-1">Compared to $12,000 last year</p>
-                </div>
-              </div>
-            </div>
 
-            <div className="border rounded-lg p-4 bg-white shadow-sm">
-              <h3 className="text-sm text-gray-500">Overall Performance</h3>
-              <div className="mt-2 flex items-center justify-between">
-                <h1 className="text-2xl font-bold">$12,000</h1>
-                <span className="text-green-600 font-medium">+12%</span>
-              </div>
-              <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br/>
-      <br/>
-    </section>
-  );
-};
+//               {/* Sales trend card with Chart.js bar chart */}
+//               <div className="border rounded-lg p-4 bg-white shadow-sm">
+//                 <h3 className="text-sm text-gray-500">Sales trend</h3>
+//                 <div className="mt-2 h-48"> {/* fixed height so chart can size properly */}
+//                 <Bar data={data} options={options} />
+//                 </div>
+//                 <p className="text-sm text-gray-500 mt-3">Monthly earnings for Q1 (January — March)</p>
+//               </div>
+//             </div>
 
-export default Tracker;
+//             <div className="border rounded-lg p-4 bg-white shadow-sm">
+//               <h3 className="text-sm text-gray-500">Overall Performance</h3>
+//               <div className="mt-2 flex items-center justify-between">
+//                 <h1 className="text-2xl font-bold">$12,000</h1>
+//                 <span className="text-green-600 font-medium">+12%</span>
+//               </div>
+//               <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <br/>
+//       <br/>
+//     </section>
+//   );
+// };
+
+// export default Tracker;
