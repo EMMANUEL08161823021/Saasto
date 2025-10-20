@@ -54,7 +54,7 @@ const Footer = () => {
 
         <br />
 
-        <div className="bg-gray-50 border-t border-gray-200 pt-4 pb-6">
+        <div className="border-t border-gray-200 pt-4 pb-6">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-sm max-w-3xl">
             <h3 className="hover:underline cursor-pointer">Terms and Condition</h3>
             <h3 className="hover:underline cursor-pointer">Privacy and Policy</h3>
