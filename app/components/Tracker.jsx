@@ -1,5 +1,6 @@
-"use client"
-import React, { useRef, useState } from "react";
+"use client";
+import React, { useRef, useMemo } from "react";
+
 import {
   Chart as ChartJS,
   ArcElement,
@@ -7,132 +8,147 @@ import {
   Legend,
   Title,
 } from "chart.js";
+import { Pie } from "react-chartjs-2";
 
-import { Doughnut } from "react-chartjs-2";
-
+// register required elements
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
-// Small utility bundle similar to your Utils
-const CHART_COLORS = {
-  red: "#ef4444",
-  white: "#FFF",
-  orange: "#f97316",
-  yellow: "#f59e0b",
-  green: "#10b981",
-  blue: "#3b82f6",
-};
-
+// small Utils replacement if you need months (kept minimal)
 const Utils = {
-  rand: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
-  numbers: ({ count, min, max }) =>
-    Array.from({ length: count }, () => Utils.rand(min, max)),
-  CHART_COLORS,
+  months: ({ count = 12 } = {}) =>
+    Array.from({ length: count }, (_, i) => {
+      const date = new Date(0, i);
+      return date.toLocaleString("default", { month: "long" });
+    }),
 };
-
-// safe deep clone (structuredClone if available, fallback to JSON)
-const deepClone = (obj) =>
-  typeof structuredClone !== "undefined"
-    ? structuredClone(obj)
-    : JSON.parse(JSON.stringify(obj));
-
 
 const Tracker = () => {
+  const chartRef = useRef(null);
 
-    const chartRef = useRef(null);
+  // === Data (taken from your snippet) ===
+  const data = useMemo(
+    () => ({
+      // Note: If you want to provide explicit label strings for each slice
+      // you can set data.labels to an array with length equal to the
+      // total number of data points across all datasets.
+      labels: [
+        /* optionally: 'Overall Yay', 'Overall Nay', 'Group A Yay', 'Group A Nay', ... */
+      ],
+      datasets: [
+        {
+          label: "Overall",
+          backgroundColor: ["#AAA", "#777"],
+          data: [21, 79],
+        },
+        {
+          label: "Overall (Breakdown)",
+          backgroundColor: ["hsl(0, 100%, 60%)", "hsl(0, 100%, 35%)"],
+          data: [33, 67],
+        },
+        {
+          label: "Group A",
+          backgroundColor: ["hsl(100, 100%, 60%)", "hsl(100, 100%, 35%)"],
+          data: [20, 80],
+        },
+        {
+          label: "Group B",
+          backgroundColor: ["hsl(180, 100%, 60%)", "hsl(180, 100%, 35%)"],
+          data: [10, 90],
+        },
+      ],
+    }),
+    []
+  );
 
-  const initial = {
-    labels: ["Red", "Orange", "Yellow", "White", "Green", "Blue"],
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: Utils.numbers({ count: 5, min: 0, max: 100 }),
-        backgroundColor: Object.values(CHART_COLORS),
+  // === Options with robust custom legend label generation and tooltip ===
+  const options = useMemo(
+    () => ({
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            // custom label generation that flattens datasets -> slices
+            generateLabels: function (chart) {
+              const items = [];
+              // iterate datasets and their data points
+              let globalIndex = 0;
+              chart.data.datasets.forEach((ds, datasetIndex) => {
+                const dsDataLen = (ds.data && ds.data.length) || 0;
+                const bg = ds.backgroundColor || [];
+                for (let i = 0; i < dsDataLen; i++, globalIndex++) {
+                  // pick a color: backgroundColor can be an array or single value
+                  let color;
+                  if (Array.isArray(bg)) color = bg[i % bg.length];
+                  else color = bg;
+
+                  // label text fallback: prefer chart.data.labels[globalIndex] if provided,
+                  // otherwise construct from dataset label and index (Yay/Nay)
+                  const rawLabel =
+                    chart.data.labels && chart.data.labels[globalIndex]
+                      ? chart.data.labels[globalIndex]
+                      : `${ds.label ?? "Group " + (datasetIndex + 1)} ${
+                          i === 0 ? "Yay" : "Nay"
+                        }`;
+
+                  items.push({
+                    text: rawLabel,
+                    fillStyle: color,
+                    hidden: !chart.isDatasetVisible(datasetIndex),
+                    // provide datasetIndex and the global slice index
+                    datasetIndex,
+                    index: globalIndex,
+                  });
+                }
+              });
+              return items;
+            },
+          },
+          // clicking a legend item toggles the corresponding dataset visibility
+          onClick: function (mouseEvent, legendItem, legend) {
+            const chart = legend.chart;
+            const dsIndex = legendItem.datasetIndex;
+            // toggle dataset visibility using Chart.js API
+            const currentlyVisible = chart.isDatasetVisible(dsIndex);
+            chart.setDatasetVisibility(dsIndex, !currentlyVisible);
+            chart.update();
+          },
+        },
+        tooltip: {
+          callbacks: {
+            title: function (context) {
+              // Map (datasetIndex, dataIndex) -> globalIndex (sum of previous dataset lengths + dataIndex)
+              if (!context || !context[0]) return "";
+              const chart = context[0].chart;
+              const datasetIndex = context[0].datasetIndex;
+              const dataIndex = context[0].dataIndex;
+
+              let acc = 0;
+              for (let i = 0; i < datasetIndex; i++) {
+                acc += (chart.data.datasets[i].data || []).length;
+              }
+              const globalIndex = acc + dataIndex;
+
+              // prefer explicit label if provided in data.labels, otherwise fallback
+              const ds = chart.data.datasets[datasetIndex];
+              const labelFromData =
+                chart.data.labels && chart.data.labels[globalIndex]
+                  ? chart.data.labels[globalIndex]
+                  : `${ds.label ?? "Group " + (datasetIndex + 1)} ${
+                      dataIndex === 0 ? "Yay" : "Nay"
+                    }`;
+
+              return labelFromData + ": " + context[0].formattedValue;
+            },
+          },
+        },
+        title: {
+          display: true,
+          text: "Custom Pie (multi-dataset)",
+        },
       },
-    ],
-  };
-
-  const [chartData, setChartData] = useState(initial);
-
-  // Actions
-  const randomize = () => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      next.datasets.forEach((ds) => {
-        ds.data = Utils.numbers({ count: next.labels.length, min: 0, max: 100 });
-      });
-      return next;
-    });
-  };
-
-  const addDataset = () => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      const colors = Object.values(CHART_COLORS);
-      const newDS = {
-        label: `Dataset ${next.datasets.length + 1}`,
-        data: next.labels.map(() => Utils.rand(0, 100)),
-        backgroundColor: next.labels.map((_, i) => colors[i % colors.length]),
-      };
-      next.datasets.push(newDS);
-      return next;
-    });
-  };
-
-  const addData = () => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      next.labels.push(`data #${next.labels.length + 1}`);
-      next.datasets.forEach((ds) => ds.data.push(Utils.rand(0, 100)));
-      return next;
-    });
-  };
-
-  const hideDataset = (indexes) => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      const idxs = Array.isArray(indexes) ? indexes : [indexes];
-      idxs.forEach((i) => {
-        if (next.datasets[i]) next.datasets[i].hidden = true;
-      });
-      return next;
-    });
-  };
-
-  const showDataset = (indexes) => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      const idxs = Array.isArray(indexes) ? indexes : [indexes];
-      idxs.forEach((i) => {
-        if (next.datasets[i]) delete next.datasets[i].hidden;
-      });
-      return next;
-    });
-  };
-
-  const removeDataset = () => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      next.datasets.pop();
-      return next;
-    });
-  };
-
-  const removeData = () => {
-    setChartData((prev) => {
-      const next = deepClone(prev);
-      next.labels.pop();
-      next.datasets.forEach((ds) => ds.data.pop());
-      return next;
-    });
-  };
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: { position: "top" },
-      title: { display: true, text: "Chart.js Doughnut Chart (Actions)" },
-    },
-  };
+    }),
+    []
+  );
 
   const months = [
     { name: "January", value: 8000 },
@@ -142,19 +158,24 @@ const Tracker = () => {
   const max = Math.max(...months.map((m) => m.value));
 
   return (
-
-
     <section className="relative bg-[#F3FDFE] overflow-hidden">
-
-      <br/>
-      <br/>
+      <br />
+      <br />
       {/* kept image tags exactly as you originally had them */}
-      <img className="absolute border scale-50 left-[-60px] " src={"/assets/chart.svg"} alt="chart" />
-      <img className="absolute hidden lg:block border scale-50 right-0" src={"/assets/target.svg"} alt="target" />
+      {/* <img
+        className="absolute hidden lg:block scale-50 left-[-5%] "
+        src={"/assets/chart.svg"}
+        alt="chart"
+      />
+      <img
+        className="absolute hidden lg:block scale-50 right-[0%]"
+        src={"/assets/target.svg"}
+        alt="target"
+      /> */}
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h1 className='leading-tight text-3xl font-extrabold text-gray-900 mb-2'>
-          How our 
+      <div className="w-full sm:max-w-xl md:max-w-4xl mx-auto px-6 text-center">
+        <h1 className="leading-tight text-3xl font-extrabold text-gray-900 mb-2">
+          How our{" "}
           <span className="relative inline-block">
             <img
               src={"/assets/shape.svg"}
@@ -164,11 +185,12 @@ const Tracker = () => {
             />
             <span className="relative pr-1.5">Tracker</span>
           </span>
-          
-          work for you</h1>
+
+          work for you
+        </h1>
         <p className="mt-3 text-sm text-gray-600 max-w-3xl mx-auto">
-          An enim nullam tempor sapien gravida donec enim ipsum porta justo congue
-          magna at pretium purus pretium ligula
+          An enim nullam tempor sapien gravida donec enim ipsum porta justo
+          congue magna at pretium purus pretium ligula
         </p>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -176,55 +198,61 @@ const Tracker = () => {
           <div className="content text-left flex flex-col gap-6">
             <div className="flex gap-4 items-start">
               <div className="p-3 w-12 h-12 rounded-lg bg-[#5BC17F] border-[#5BC17F] shadow-sm flex items-center justify-center">
-                <img src={"/assets/minute.svg"} alt="wallet"/>
+                <img src={"/assets/minute.svg"} alt="wallet" />
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">Time Tracking</h4>
-                <p className="text-sm text-gray-600">Time Tracking has never been easier. Just let the stopwatch run</p>
+                <p className="text-sm text-gray-600">
+                  Time Tracking has never been easier. Just let the stopwatch run
+                </p>
               </div>
             </div>
 
             <div className="flex gap-4 items-start">
               <div className="p-3 w-12 h-12 rounded-lg bg-transparent shadow-sm flex items-center justify-center">
-                <img src={"/assets/hourglass.svg"} alt="wallet"/>
+                <img src={"/assets/hourglass.svg"} alt="wallet" />
               </div>
               <div className="p-3 w-12 h-12 rounded-lg bg-[#FE6292] border-[#FE6292] shadow-sm flex items-center justify-center">
-                <img src={"/assets/hourglass.svg"} alt="wallet"/>
+                <img src={"/assets/hourglass.svg"} alt="wallet" />
               </div>
 
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">Expenses</h4>
-                <p className="text-sm text-gray-600">Track expenses alongside tasks so budgeting stays accurate</p>
+                <p className="text-sm text-gray-600">
+                  Track expenses alongside tasks so budgeting stays accurate
+                </p>
               </div>
             </div>
 
             <div className="flex gap-4 items-start">
               <div className="p-3 w-12 h-12 rounded-lg bg-[#6B72FF] border-[#6B72FF] shadow-sm flex items-center justify-center">
-                <img src={"/assets/wallet.svg"} alt="wallet"/>
+                <img src={"/assets/wallet.svg"} alt="wallet" />
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">Budget controlling</h4>
-                <p className="text-sm text-gray-600">Easily set budgets and monitor spending against targets</p>
+                <p className="text-sm text-gray-600">
+                  Easily set budgets and monitor spending against targets
+                </p>
               </div>
             </div>
           </div>
 
           {/* Right: Stats / Cards */}
-          <div className="flex flex-col gap-4">
-            <div className="border text-left rounded-lg p-4 bg-white shadow-sm">
+          <div className="w-full flex flex-col text-left gap-3">
+            <div className="border rounded-lg bg-white p-2">
+
               <h3 className="text-sm text-gray-900">Sales trend</h3>
-              <h1 className="text-sm text-gray-900">$12,755</h1>
+              <h1 className="text-xl font-extrabold text-gray-900">$12,755</h1>
               <p className="mt-2 text-sm text-gray-900">Compared to $12,000 last year</p>
 
-
-              <div className="mt-3 space-y-4">
+              <div className="space-y-4">
                 {months.map((m) => {
                   const percent = Math.round((m.value / max) * 100);
                   return (
                     <div key={m.name}>
                       <div className="flex justify-between items-baseline">
                         <span className="text-sm font-medium text-gray-700">{m.name}</span>
-                        <span className="text-xs text-gray-500">${m.value.toLocaleString()} • {percent}%</span>
+                        <span className="text-xs text-gray-900">{percent}%</span>
                       </div>
 
                       <div
@@ -253,42 +281,20 @@ const Tracker = () => {
                 })}
               </div>
 
-              <p className="text-sm text-gray-500 mt-3">Monthly earnings for Q1 (January — March)</p>
             </div>
+            <div className="border w-full h-max text-left rounded-lg p-4 bg-white shadow-sm">
+            <h3 className="text-sm text-gray-900">Global Statistics</h3>
+            <p className="mt-2 text-sm text-gray-900">Compared to $12,000 last year</p>
 
-
-            <div className="border rounded-lg p-4 bg-white shadow-sm">
-              <h3 className="text-sm text-gray-500">Overall Performance</h3>
-
-              <div className="mt-2 flex items-center justify-between">
-                <h1 className="text-2xl font-bold">$12,000</h1>
-                <span className="text-green-600 font-medium">+12%</span>
-              </div>
-              <p className="mt-2 text-sm text-gray-500">Compared to $12,000 last year</p>
-
-              {/* actions */}
-              <div className="mt-3 flex flex-wrap gap-2">
-                <button onClick={randomize} className="px-3 py-1 rounded bg-gray-100 text-sm">Randomize</button>
-                <button onClick={addDataset} className="px-3 py-1 rounded bg-gray-100 text-sm">Add Dataset</button>
-                <button onClick={addData} className="px-3 py-1 rounded bg-gray-100 text-sm">Add Data</button>
-                <button onClick={() => hideDataset(0)} className="px-3 py-1 rounded bg-gray-100 text-sm">Hide(0)</button>
-                <button onClick={() => showDataset(0)} className="px-3 py-1 rounded bg-gray-100 text-sm">Show(0)</button>
-                <button onClick={() => hideDataset([0,1])} className="px-3 py-1 rounded bg-gray-100 text-sm">Hide(0,1)</button>
-                <button onClick={() => showDataset([0,1])} className="px-3 py-1 rounded bg-gray-100 text-sm">Show(0,1)</button>
-                <button onClick={removeDataset} className="px-3 py-1 rounded bg-gray-100 text-sm">Remove Dataset</button>
-                <button onClick={removeData} className="px-3 py-1 rounded bg-gray-100 text-sm">Remove Data</button>
-              </div>
-
-              {/* chart */}
-              <div className="mt-4 h-56">
-                <Doughnut ref={chartRef} data={chartData} options={options} />
-              </div>
+            <div className="mt-4 h-[300px]">
+              <Pie ref={chartRef} data={data} options={options} />
             </div>
+          </div>
           </div>
         </div>
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
     </section>
   );
 };
