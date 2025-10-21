@@ -38,7 +38,7 @@ const Free = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="text-xs text-nowrap">Download on the store</h4>
-                                <span className="text-xs font-semibold">App Store</span>
+                                <span className="text-sm font-semibold">App Store</span>
                             </div>
                             </button>
 
@@ -48,7 +48,7 @@ const Free = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="text-xs">Get it on</h4>
-                                <span className="text-xs font-semibold">Google Play</span>
+                                <span className="text-sm font-semibold">Google Play</span>
                             </div>
                             </button>
 

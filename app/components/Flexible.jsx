@@ -15,7 +15,7 @@ const Flexible = () => {
     <section className="relative bg-white overflow-hidden">
       <br />
       <br />
-        <img className="absolute hidden md:block w-1/8 left-[0%] top-[45%]" src={"/assets/Hand.svg"} alt="alt" />
+      <img className="absolute hidden md:block w-1/8 left-[0%] top-[45%]" src={"/assets/Hand.svg"} alt="alt" />
 
 
       <div className="w-full sm:max-w-xl md:max-w-4xl h-[100%] mx-auto px-4">
@@ -76,7 +76,7 @@ const Flexible = () => {
                 {/* Free stays the same */}
                 <p className="mt-3 text-2xl font-bold text-gray-900">
                   $0
-                  <span className="text-sm font-extralight">/forever</span>
+                  <sub className="text-sm font-extralight">/forever</sub>
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ const Flexible = () => {
 
                 <p className="mt-3 text-2xl font-bold">
                   {isYearly ? `$${premiumYearly}` : `$${premiumMonthly}`}
-                  <span className="text-sm font-extralight">{isYearly ? "/yr" : "/mo"}</span>
+                  <sub className="text-sm font-extralight">{isYearly ? "/yr" : "/mo"}</sub>
                 </p>
               </div>
 
