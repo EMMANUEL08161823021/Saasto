@@ -27,7 +27,7 @@ export default function Home() {
       <Hero/>
       <Features/>
       <Report/>
-      <Tracker/>
+      {/* <Tracker/> */}
       <Flexible/>
       <Trusted/>
       <Client/>
