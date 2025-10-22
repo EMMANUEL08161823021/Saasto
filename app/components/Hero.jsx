@@ -162,12 +162,12 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <img className='absolute hidden lg:block" right-[3%] top-[40%] border' src={"/assets/mobile-screen-2.svg"} alt='mobile-screen-2' />
+        <img className='absolute hidden lg:block" right-[3%] top-[40%]' src={"/assets/mobile-screen-2.svg"} alt='mobile-screen-2' />
       </div>
       <div className="bg-white h-auto w-full p-6 flex  justify-center">
         <motion.div
           ref={ref}
-          className="flex flex-col md:flex-row justify-center gap-6 max-w-4xl w-full border border-black rounded-lg p-4"
+          className="flex flex-col md:flex-row justify-center gap-6 max-w-4xl w-full border-black rounded-lg p-4"
           variants={container}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
