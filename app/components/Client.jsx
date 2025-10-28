@@ -8,14 +8,14 @@ const Client = () => {
         "Leading an organization is incredibly rewarding and equally humbling. Confidence and humility. Every success is built on lessons from mistakes made is incredibly rewarding",
       name: "Mila McSabbu",
       role: "Designer",
-      image:"person",
+      image:"/assets/person.jpg",
     },
     {
       text:
         "We saw a measurable increase in productivity and team alignment after switching. The UI is simple and the onboarding was seamless.",
       name: "Ayo Ade",
       role: "Product Manager",
-      image:"person-1",
+      image:"/assets/person-1.jpg",
 
     },
     {
@@ -23,7 +23,7 @@ const Client = () => {
         "The tracking features saved us countless hours. The analytics made planning and forecasting so much easier.",
       name: "Sara Bello",
       role: "Founder",
-      image:"person-2",
+      image:"/assets/person-2.jpg",
 
     },
   ];
@@ -73,7 +73,7 @@ const Client = () => {
           >
             {/* left: larger image box — kept the <img> tag inside exactly as you had it */}
             <div className="w-full overflow-hidden md:w-[300px] md:h-[300px] flex-shrink-0 z-20 flex items-center justify-center rounded-4xl shadow-lg bg-[#FFF8F2]">
-              <img className="md:scale-150 object-center" src={`/assets/${testimonials[index].image}.jpg`} alt="image"/>
+              <img className="md:scale-150 object-center" src={`${testimonials[index].image}`} alt="image"/>
             </div>
 
             {/* right: enlarged testimonial content */}

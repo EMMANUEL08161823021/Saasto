@@ -1,6 +1,7 @@
 // app/layout.js
 import './globals.css'
 import { Poppins } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/next"
 
 import LoaderManager from './components/LoaderManager';
 
@@ -26,8 +27,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className /* or poppins.variable */}>
       <body>
-
       <LoaderManager>{children}</LoaderManager>
+      <Analytics/>
       </body>
     </html>
   )
